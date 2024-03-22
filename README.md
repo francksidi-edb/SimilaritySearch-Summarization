@@ -143,6 +143,7 @@ NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/pa-edb-and-op
 NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf took 0.10 seconds
 
 ...
+
 NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 7.08 seconds
 
 NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 0.00 seconds
