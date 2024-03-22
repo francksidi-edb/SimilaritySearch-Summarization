@@ -11,7 +11,7 @@ Insert inside a Postgres Table containing Vectors
 
 Search using a Streamlit Python application on the Postgresql table using Similarity Search
 
-#Create all DDL 
+# Create all DDL 
 
 1 - Create The Target Table 
 
@@ -24,5 +24,7 @@ CREATE TABLE IF NOT EXISTS public.demopdf_bert
 )
 
 TABLESPACE pg_default;
+
+2 - 
 
 
