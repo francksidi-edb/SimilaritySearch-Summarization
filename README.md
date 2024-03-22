@@ -156,6 +156,12 @@ NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/pem_v9_docume
 
 Successfully run. Total query runtime: 2 min 12 secs.
 
+# Run the application 
+
+Run from the command line 
+
+streamlit run pdf_search_bert.py
+
 
 
 
