@@ -95,8 +95,73 @@ CREATE TABLE IF NOT EXISTS public.demopdf_bert
 TABLESPACE pg_default;
 
 2 - Create the function to load pdf and  generate summary 
-
 Use the script in ddl: insert_embeddings_from_pdf_bert.sql
+
+# Generate Data
+
+The best will be to put inside a directory many pdfs, I put some sample in dataset directory and then run from sql command: 
+
+truncate table public.demopdf_bert;
+select public.insert_embeddings_from_pdf_bert('/Users/francksidi/Downloads/pdf')
+
+NOTICE:  Sentence Transformer Model Loaded
+NOTICE:  BART Model and Tokenizer for Summarization Loaded
+NOTICE:  Found 10 PDF files
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/SBSA_Oracle Migration.pdf took 0.59 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/SBSA_Oracle Migration.pdf took 0.73 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/SBSA_Oracle Migration.pdf took 8.58 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/SBSA_Oracle Migration.pdf took 0.01 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/SBSA_Oracle Migration.pdf was 9.90 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/DemoBlog.pdf took 0.73 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/DemoBlog.pdf took 0.18 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/DemoBlog.pdf took 8.29 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/DemoBlog.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/DemoBlog.pdf was 9.20 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/pa-edb-and-openshift-brief-703263pr-202402-en.pdf took 0.17 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/pa-edb-and-openshift-brief-703263pr-202402-en.pdf took 0.18 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/pa-edb-and-openshift-brief-703263pr-202402-en.pdf took 8.16 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/pa-edb-and-openshift-brief-703263pr-202402-en.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/pa-edb-and-openshift-brief-703263pr-202402-en.pdf was 8.51 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf took 0.10 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf took 0.18 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf took 7.52 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/Percona_vs_C360_Battlecard_Aug2023.pdf was 7.80 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/Scaling-AI-ML-The-Critical-Role-of-Data-.pdf took 0.67 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/Scaling-AI-ML-The-Critical-Role-of-Data-.pdf took 0.22 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/Scaling-AI-ML-The-Critical-Role-of-Data-.pdf took 7.52 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/Scaling-AI-ML-The-Critical-Role-of-Data-.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/Scaling-AI-ML-The-Critical-Role-of-Data-.pdf was 8.41 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/PS-QF-08.pdf took 0.34 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/PS-QF-08.pdf took 0.19 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/PS-QF-08.pdf took 5.97 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/PS-QF-08.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/PS-QF-08.pdf was 6.50 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/PgVector_use_cases.pdf took 1.80 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/PgVector_use_cases.pdf took 0.19 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/PgVector_use_cases.pdf took 6.95 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/PgVector_use_cases.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/PgVector_use_cases.pdf was 8.96 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/DataFusion_Query_Engine___SIGMOD_2024-1.pdf took 1.63 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/DataFusion_Query_Engine___SIGMOD_2024-1.pdf took 0.21 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/DataFusion_Query_Engine___SIGMOD_2024-1.pdf took 8.32 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/DataFusion_Query_Engine___SIGMOD_2024-1.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/DataFusion_Query_Engine___SIGMOD_2024-1.pdf was 10.16 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/repmgr_v5.3.3_documentation.pdf took 0.06 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/repmgr_v5.3.3_documentation.pdf took 0.13 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/repmgr_v5.3.3_documentation.pdf took 6.32 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/repmgr_v5.3.3_documentation.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/repmgr_v5.3.3_documentation.pdf was 6.52 seconds
+NOTICE:  Text extraction for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 31.71 seconds
+NOTICE:  Embedding generation for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 0.66 seconds
+NOTICE:  Summary generation for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 7.08 seconds
+NOTICE:  Insert operation for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf took 0.00 seconds
+NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/pem_v9_documentation.pdf was 39.45 seconds
+
+Successfully run. Total query runtime: 2 min 12 secs.
+1 rows affected.
+
+
 
 
 
