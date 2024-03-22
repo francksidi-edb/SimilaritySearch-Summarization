@@ -30,7 +30,7 @@ Validate that pl-python3u is working well
 postgres=# select public.test_plpython(); test_plpython
 PL/Python is working! (1 row)
 
-Test that summarization is working using the following OS command: 
+Test that summarization is working using the following OS command. Both programs are in code directory
 
 $python summary.py 
 
