@@ -11,6 +11,24 @@ Insert inside a Postgres Table containing Vectors
 
 Search using a Streamlit Python application on the Postgresql table using Similarity Search
 
+# Requirements
+
+Postgresql 16 installed. 
+
+EDB Language pack installed. 
+
+Run pip install from EDB Python directory as: 
+/Library/edb/languagepack/v4/Python-3.11/bin/pip install -r requirements.txt
+
+Install pgvector 0.6 extension from https://github.com/pgvector/pgvector
+
+Python Environment: The Python environment accessible to PostgreSQL should have the necessary libraries installed: After test that this program is working
+
+Test that summarization is working using the following
+
+$python summary.py 
+
+
 # Create all DDL 
 
 1 - Create The Target Table 
