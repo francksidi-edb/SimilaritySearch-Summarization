@@ -23,11 +23,15 @@ Run pip install from EDB Python directory as:
 Install pgvector 0.6 extension from https://github.com/pgvector/pgvector
 
 Install plpython3u extension in the database
+
 create extension plpython3u;
 
 Validate that pl-python3u is working well
 
-postgres=# select public.test_plpython(); test_plpython
+postgres=# select public.test_plpython(); 
+
+test_plpython
+
 PL/Python is working! (1 row)
 
 Test that summarization is working using the following OS command. Both programs are in code directory
@@ -90,6 +94,9 @@ CREATE TABLE IF NOT EXISTS public.demopdf_bert
 
 TABLESPACE pg_default;
 
-2 - 
+2 - Create the function to load pdf and  generate summary 
+
+Use the script in ddl: insert_embeddings_from_pdf_bert.sql
+
 
 
