@@ -15,4 +15,14 @@ Search using a Streamlit Python application on the Postgresql table using Simila
 
 1 - Create The Target Table 
 
+CREATE TABLE IF NOT EXISTS public.demopdf_bert
+(
+    id serial,
+    pdfpath text ,
+    embeddings vector(768),
+    summary text 
+)
+
+TABLESPACE pg_default;
+
 
