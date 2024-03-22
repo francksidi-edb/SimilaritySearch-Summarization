@@ -10,3 +10,9 @@ Use https://huggingface.co/allenai/led-base-16384 for generating a summary of th
 Insert inside a Postgres Table containing Vectors
 
 Search using a Streamlit Python application on the Postgresql table using Similarity Search
+
+#Create all DDL 
+
+1 - Create The Target Table 
+
+
