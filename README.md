@@ -97,6 +97,9 @@ TABLESPACE pg_default;
 2 - Create the function to load pdf and  generate summary 
 Use the script in ddl: insert_embeddings_from_pdf_bert.sql
 
+3 - Create the function get_embedding_bert_f as this function will be called by the application to generate the embedding 
+of the input text 
+
 # Generate Data
 
 The best will be to put inside a directory many pdfs, I put some sample in dataset directory and then run from sql command: 
