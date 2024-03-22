@@ -34,6 +34,32 @@ Test that summarization is working using the following OS command:
 
 $python summary.py 
 
+Test The all-disti model using a python program 
+$python alldisti.py
+
+francksidi@MAC-P94C5HH2F1 python % python alldisti.py 
+Loading model 'all-distilroberta-v1'...
+
+Generating embeddings...
+
+Embeddings generated:
+
+[[-2.70629954e-02 -3.84049043e-02 -2.54163481e-02 -2.84959245e-02
+
+   7.88855255e-02  1.37084955e-02 -3.98023706e-03  7.30625391e-02
+  
+  -1.32552511e-03 -3.03104613e-02 -4.47093211e-02 -3.02385204e-02
+
+
+
+  ...
+
+     4.33775224e-02 -1.07817305e-02 -3.86205278e-02 -2.25081146e-02]]
+
+The size (dimensionality) of the embeddings vector is: 768
+
+
+
 
 # Create all DDL 
 
