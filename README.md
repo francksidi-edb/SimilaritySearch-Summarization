@@ -22,9 +22,15 @@ Run pip install from EDB Python directory as:
 
 Install pgvector 0.6 extension from https://github.com/pgvector/pgvector
 
-Python Environment: The Python environment accessible to PostgreSQL should have the necessary libraries installed: After test that this program is working
+Install plpython3u extension in the database
+create extension plpython3u;
 
-Test that summarization is working using the following
+Validate that pl-python3u is working well
+
+postgres=# select public.test_plpython(); test_plpython
+PL/Python is working! (1 row)
+
+Test that summarization is working using the following OS command: 
 
 $python summary.py 
 
