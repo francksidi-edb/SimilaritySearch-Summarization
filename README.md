@@ -34,10 +34,25 @@ Test that summarization is working using the following OS command:
 
 $python summary.py 
 
+francksidi@MAC-P94C5HH2F1 python % python summary.py                        
+
+Model loading time: 1.31 seconds
+
+Tokenization time: 0.00 seconds
+
+Summary generation time: 21.24 seconds
+
+Generated Summary:
+        Jupiter is the fifth planet from the Sun and the largest in the Solar System.                         It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined.             Jupiter is one of the brightest objects visible to the naked eye in the night sky and has been known to ancient civilizations since before recorded history.                   
+
+Total execution time: 22.55 seconds
+
+
 Test The all-disti model using a python program 
 $python alldisti.py
 
 francksidi@MAC-P94C5HH2F1 python % python alldisti.py 
+
 Loading model 'all-distilroberta-v1'...
 
 Generating embeddings...
