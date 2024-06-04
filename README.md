@@ -171,3 +171,21 @@ Run from the command line. Copy the logo.png image in the directory in which the
 ```
 streamlit run pdf_search_bert.py
 ```
+
+# Similarity Search using PGAI extension
+
+Similarity Search on text files using Huggingface Models
+
+The objective of this experiment is to leverage 2 types of models in conjunction with PostgreSQL, and EDB's pgai extension to execute transformation functions directly within the database for efficient searching. 
+
+The pgai extension is currently available as a tech preview. It will be continuously extended with new functions. To install and run pgai extension please follow bellow steps:
+
+1. Follow pgai Tech Preview step by step to run pgai as a container. After that you can follow below steps to run a `streamlit` application using `pgai extension`.
+2. After running pgai container and ready to get connection. Please make sure that container is ready to connect, because installing the necessary libraries and setting connections takes time and requires internet.
+```sh 
+->user@SimilaritySearch: python code/connect_encode.py  <embedding_model_name> <s3_bucket_name>
+```
+3. Finally run as a streamlit application
+```sh
+->user@SimilaritySearch: streamlit run code/pdf_search_pgai.py
+```
