@@ -91,12 +91,12 @@ st.session_state.search_text = st.text_input("Enter text to search in files:",
 # Search Functionality
 if st.button('Search') or st.session_state.search_text:
     if st.session_state.search_text:
-        with st.spinner("Searching PDFs..."):
+        with st.spinner("Searching in files..."):
             st.session_state.search_results = run_queries(st.session_state.search_text)
         if st.session_state.search_results:
             for id, text_info in enumerate(st.session_state.search_results, start=1):
                 text_info_j = ast.literal_eval(text_info)["text_id"]
-                st.markdown(f"**ID:** {id} | **Text Name:** {text_info_j}")
+                st.markdown(f"**ID:** {id} | **File Name:** {text_info_j}")
         else:
             st.error("No matching PDFs found.")
     else:
