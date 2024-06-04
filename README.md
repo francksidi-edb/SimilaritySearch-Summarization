@@ -11,7 +11,7 @@ Insert inside a Postgres Table containing Vectors
 
 Search using a Streamlit Python application on the Postgresql table using Similarity Search
 
-# Requirements
+## Requirements
 
 Postgresql 16 installed. 
 
@@ -87,7 +87,7 @@ The size (dimensionality) of the embeddings vector is: 768
 
 
 
-# Create all DDL 
+## Create all DDL 
 
 1 - Create The Target Table 
 ```
@@ -109,7 +109,7 @@ insert_embeddings_from_pdf_bert.sql
 3 - Create the function get_embedding_bert_f as this function will be called by the application to generate the embedding 
 of the input text 
 
-# Generate Data
+## Generate Data
 
 The best will be to put inside a directory many pdfs, I put some sample in dataset directory and then run from sql command: 
 ```
@@ -165,9 +165,31 @@ NOTICE:  Total processing time for /Users/francksidi/Downloads/pdf/pem_v9_docume
 
 Successfully run. Total query runtime: 2 min 12 secs.
 ```
-# Run the application 
+## Run the application 
 
 Run from the command line. Copy the logo.png image in the directory in which the python program is running. 
 ```
 streamlit run pdf_search_bert.py
+```
+
+# Similarity Search using PGAI extension
+
+Similarity Search on text files using Huggingface Models
+
+The objective of this experiment is to leverage 2 types of models in conjunction with PostgreSQL, and EDB's pgai extension to execute transformation functions directly within the database for efficient searching. 
+
+The pgai extension is currently available as a tech preview. It will be continuously extended with new functions. To install and run pgai extension please follow bellow steps:
+
+1. Install requirements:
+```sh 
+pip install -r requirements.txt
+```
+2. Follow pgai Tech Preview step by step to run pgai as a container. After that you can follow below steps to run a `streamlit` application using `pgai extension`.
+3. After running pgai container and ready to get connection. Please make sure that container is ready to connect, because installing the necessary libraries and setting connections takes time and requires internet.
+```sh 
+->user@SimilaritySearch: python code/connect_encode.py  <embedding_model_name> <s3_bucket_name>
+```
+4. Finally run as a streamlit application
+```sh
+->user@SimilaritySearch: streamlit run code/pdf_search_pgai.py
 ```
